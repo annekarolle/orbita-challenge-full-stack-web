@@ -113,6 +113,13 @@ app.UseReDoc(c =>
 
 app.UseHttpsRedirection();
 
+app.UseCors(builder =>
+{
+    builder.WithOrigins("http://localhost:5173")
+           .AllowAnyHeader()
+           .AllowAnyMethod();
+});
+
 app.UseAuthentication();
 app.UseAuthorization();
 

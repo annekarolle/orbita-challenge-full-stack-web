@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Orbita.DTO;
 using Orbita.Entity;
 using Orbita.Enums;
@@ -36,17 +38,19 @@ public class UserController : ControllerBase
     public IActionResult SaveUser(SaveUserDTO userDTO)
     {
 
+
         if (_userRepository.IsEmailAlreadyRegistered(userDTO.Email))
         {
             var errorMessage = $"Error: Email {userDTO.Email} já esta cadastrado.";
             _logger.LogError(errorMessage);
             return BadRequest(errorMessage);
         }
-
-        _userRepository.Save(new User(userDTO, _passwordHasher));
+        var user = new User(userDTO, _passwordHasher);
+        _userRepository.Save(user);
        
         var message = $"User {userDTO.Name} created with sucess!";
         _logger.LogWarning(message);
+
         return Ok(message);
     }
 

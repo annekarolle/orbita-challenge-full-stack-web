@@ -1,16 +1,15 @@
 import axios from 'axios';
 
- export const customAxios = () => {
+export const customAxios = () => {
   const instance = axios.create({
+    baseURL: 'https://localhost:7287/',
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   });
   return instance;
 };
- 
-export const api = axios.create({
-  baseURL: 'http://localhost:3001',
-});
+
+export const api = customAxios();
 
  

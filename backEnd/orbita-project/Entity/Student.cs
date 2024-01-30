@@ -11,6 +11,8 @@ namespace Orbita.Entity
         public string RA { get; set; }
         public string CPF { get; set; }
 
+
+        public Student() { }
         public Student(SaveStudentsDTO dto)
         {
             Name = dto.Name;
@@ -23,11 +25,19 @@ namespace Orbita.Entity
         {
             if (!string.IsNullOrEmpty(name))
             {
-                string initials = new string(name.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(part => part[0]).ToArray());
-                string record = $"{ra}{initials}";
-                return record;
+                string[] nameParts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+             
+                string lastSurname = nameParts.LastOrDefault();
+
+                return $"{ra}{lastSurname}" ?? string.Empty;
             }
             return string.Empty;
+        }
+
+        public void ChangeNameOrEmail(string name, string email)
+        {
+            this.Name = name;
+            this.Email = email;
         }
 
 

@@ -29,7 +29,7 @@
             <response code="200"> Retonar Sucesso</response>
             <response code="401"> Não Autenticado</response>
             <response code="403"> Ñão Autorizado</response>
-            <response code="404"> Usuário não encontrado</response>
+            <response code="404"> Aluno não encontrado</response>
         </member>
         <member name="M:orbita.Controllers.StudentController.DeleteStudent(System.String)">
             <summary>
@@ -138,6 +138,42 @@
             </summary>
             <param name="email"></param>
             <returns></returns>
+        </member>
+        <member name="T:Orbita.Migrations.createtables">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.createtables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.createtables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.createtables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Orbita.Migrations.changetimestamp">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.changetimestamp.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.changetimestamp.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.changetimestamp.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Orbita.Migrations.changetables">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.changetables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.changetables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Orbita.Migrations.changetables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
         </member>
         <member name="M:Orbita.Repository.EFStudentRepository.IsEmailAlreadyRegistered(System.String)">
             <summary>

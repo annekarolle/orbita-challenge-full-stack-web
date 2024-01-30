@@ -15,9 +15,9 @@ namespace Orbita.Entity
         public string Email { get; set; }
         public string Password { get; set; }    
         public PermitionsTypes Permitions { get; set; }
-        public bool IsActived { get; set; }
-      
-        
+        public int Id { get; set; }
+
+
 
         public User() { }
 
@@ -33,14 +33,27 @@ namespace Orbita.Entity
             Name = saveUserDTO.Name;
             Email = saveUserDTO.Email;
             Password = passwordHasher.HashPassword(saveUserDTO.Password);
-            Permitions = saveUserDTO.Permitions;
-            IsActived = true;
+
+            switch (saveUserDTO.Permitions)
+            {
+                case PermitionsTypes.Admin:
+                    Permitions = PermitionsTypes.Admin;
+                    break;
+                case  PermitionsTypes.Director:
+                    Permitions = PermitionsTypes.Director;
+                    break;
+                default:
+                    Permitions = PermitionsTypes.General;
+                    break;
+            }
+
+
             CreatedDate = DateTime.UtcNow;
         }
 
         public void DesactiveUser(int id)
         {
-            IsActived = false;
+        
             DesactivedDate = DateTime.Now;
         }
 

@@ -1,13 +1,17 @@
  import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../pages/home-page/home-page.vue';
+
 import Dashboard from '../pages/dash-board/dash-board.vue';
 import StudentsCrudVue from '@/components/StudentsCrud/StudentsCrud.vue';
 import StudentsListVue from '@/components/StudentsList/StudentsList.vue';
+import EditStudentComponentsVue from '@/components/EditStudentComponents/EditStudentComponents.vue';
+ import homePage from "@/pages/home-page/homePage.vue";
+ import Welcome from '@/components/Welcome/Welcome.vue';
+
 
 const routes = [
   {
     path: '/',
-    component: Home,
+    component:  homePage,
   },
   {
     path: '/dashboard',
@@ -18,13 +22,22 @@ const routes = [
         component: StudentsCrudVue,  
       },
       {
+        path: 'welcome',
+        component: Welcome,
+      },
+      {
+        path: 'editar/:ra',  
+        component: EditStudentComponentsVue,  
+      },
+      {
         path: 'listar',  
         component: StudentsListVue,  
       },
+
     ],
-    // meta: {
-    //   requiresAuth: true,
-    // },
+    meta: {
+      requiresAuth: true,
+    },
   },
 ];
 
@@ -42,12 +55,14 @@ router.beforeEach((to, from, next) => {
   });
 
   function isAuthenticated() {
-    // Implementação da lógica de autenticação
-    // Retorne true se o usuário estiver autenticado, false caso contrário
-    return true; // Adapte conforme necessário
+
+    const token = localStorage.getItem('token')
+    if(token && token.length > 0){
+      return true
+    }
+    return false;
   }
 
 
 export default router
 
- 

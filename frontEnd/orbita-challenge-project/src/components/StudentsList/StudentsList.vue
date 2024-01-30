@@ -2,31 +2,64 @@
 
 <script lang="ts">
  
+import type StudentInterface from "@/interface/studentInterface"
+import {GetAllStudent} from "@/services/StudentsService"
+import { ref } from "vue";
+import Modal from "@/components/Modal/Modal.vue"
+
 
 export default {
   data() {
     return {
       showModal: false,
-     
+      students: ref<StudentInterface[]>([]),
+      ra: '',
+      name:''
     };
-    
-  },
- 
-  methods: {
-    
-    editarAluno(id) {     
-      
-    }, 
 
-    openModal() {
-    console.log(this.showModal)
-      this.showModal = true;
+  },
+  components: {
+    Modal,
+  },
+  methods: {    
+    async getStudent() {   
+      try {
+        const response = await GetAllStudent();
+        this.students = response;
+        
+      } catch (error) {
+        console.error("Erro ao obter alunos:", error);
+      }
     },
+
     closeModal() {
       this.showModal = false;
     },
+    handleModal(raselecionado: string){
+      this.ra = raselecionado
+      this.showModal = true;
+    },
+    editar(ra: string){
+      this.$router.push(`/dashboard/editar/${ra}`);
+    },
+    filter(){
+      console.log(this.name.length < 0)
+      if(this.name.trim() === ""){
+        this.getStudent()
+      }else{
+        this.students = this.students.filter(item => item.name.toUpperCase().includes(this.name.toUpperCase()));
+      }
+
+    }
   },
-  
+  mounted() {
+    this.getStudent();
+  },
+  watch: {
+    name(newName) {
+      this.filter();
+    },
+  }
 }
 </script>
 
@@ -39,10 +72,10 @@ export default {
     </div>
  <div>
     <div class="main-container-search-students">
-        <div class="container-search-students">
-            <input type="text">
+        <form class="container-search-students" @submit.prevent="filter">
+            <input type="text"  id="name" v-model="name">
             <button class="btn">Pesquisar</button>
-        </div>
+        </form>
         <router-link to="/dashboard/cadastrar" class="link">
          <button class="btn btn-save" style="width: 150px">Cadastrar Aluno</button>
         </router-link>
@@ -58,23 +91,19 @@ export default {
       </tr>
     </thead>
     <tbody>      
-      <tr>
-        <td>12345</td>
-        <td>João Silva</td>
-        <td>123.456.789-00</td>
-        <td>
-          <button @click="editarAluno" class="btn-action">Editar</button>
-          <button @click="openModal"  class="btn-action">Excluir</button>
+      <tr v-for="(student, index) in students" :key="index">
+        <td>{{ student.ra }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.cpf }}</td>
+        <td style="display: flex; flex-direction: row; gap: 1em;justify-content: center">
+          <v-btn class="btn-action" @click="editar(student.ra)">Editar</v-btn>
+          <v-btn @click="handleModal(student.ra)" class="btn-action">Excluir</v-btn>
         </td>
       </tr>    
     </tbody>
+   <p v-if="students.length <= 0">Nenhum registro de alunos</p>
   </table>
+
   </section>
-  <div class="modal" v-if="showModal">
-    <div class="modal-content">
-      <span class="close" @click="closeModal">&times;</span>
-       <h1>teste</h1>
-      <slot></slot>
-    </div>
-  </div>
+  <Modal :ra=ra  v-if="showModal" @closeModal="closeModal" />
 </template>

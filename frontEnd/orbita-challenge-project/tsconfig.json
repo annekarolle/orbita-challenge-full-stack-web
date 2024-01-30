@@ -11,7 +11,19 @@
   ],
   "compilerOptions": {
     "types": [
-      "vue-toastification/nuxt"
-    ]
+      "vue-toastification/nuxt",
+      "@nuxtjs/toast",
+      "vue3-toastify/global"
+    ],
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "Preserve",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true
+  },
+  "vueCompilerOptions": {
+    "target": 3.3
   }
 }

@@ -38,9 +38,8 @@ namespace orbita.Controllers
         [Authorize(Roles = Permitions.Admin)]
         [HttpPost("saveStudent")]
         public IActionResult SaveStudent(SaveStudentsDTO saveDto)
-        {
-
-            if (_userRepository.IsEmailAlreadyRegistered(saveDto.Email))
+        {            
+            if (_studentRepository.IsEmailAlreadyRegistered(saveDto.Email))
             {
                 var errorMessage = $"Error: Email {saveDto.Email} já esta cadastrado.";
                 _logger.LogError(errorMessage);
@@ -62,7 +61,7 @@ namespace orbita.Controllers
         /// <response code="401"> Não Autenticado</response>
         /// <response code="403"> Ñão Autorizado</response>
         [Authorize]       
-        [HttpGet("getAllUser")]
+        [HttpGet("getAllStudent")]
         public IActionResult GetAllUser()
         {
             return Ok(_studentRepository.GetAll());
@@ -76,17 +75,24 @@ namespace orbita.Controllers
         /// <response code="200"> Retonar Sucesso</response>
         /// <response code="401"> Não Autenticado</response>
         /// <response code="403"> Ñão Autorizado</response>
-        /// <response code="404"> Usuário não encontrado</response>
+        /// <response code="404"> Aluno não encontrado</response>
         [Authorize]        
-        [HttpGet("getUserByRA/{ra}")]
+        [HttpGet("getStudentByRA/{ra}")]
         public IActionResult GetUserByRA(string ra)
         {
             var user = _studentRepository.GetByRA(ra);
 
             if (user == null)
-                return NotFound("Usuário não encontrado!");
+            {
+                _logger.LogError("Aluno não encontrado!");
+                return NotFound("Aluno não encontrado!");
+            }
+            else
+            {
+                return Ok(user);
+            }                
 
-            return Ok(user);
+           
         }
 
 
@@ -101,13 +107,15 @@ namespace orbita.Controllers
         /// <response code="404"> Usuário não encontrado</response>
         [Authorize]
         [Authorize(Roles = Permitions.Admin)]
-        [HttpDelete("deleteStudent/{id}")]
+        [HttpDelete("deleteStudent/{ra}")]
         public IActionResult DeleteStudent(string ra)
         {
-
             var student = _studentRepository.GetByRA(ra);
             _studentRepository.Delete(student.Id);
-            return Ok("Usuario deletado com sucesso");
+
+            _logger.LogInformation($"Aluno {student.Name} deletado com sucesso");
+
+            return Ok("Aluno deletado com sucesso");
              
         }
 
@@ -119,18 +127,23 @@ namespace orbita.Controllers
         /// <response code="401"> Não Autenticado</response> 
         /// <response code="404"> Usuário não encontrado</response>
         [Authorize]
-        [HttpPatch("editStudent")]
+        [HttpPut("editStudent")]
         public IActionResult EditStudent(PutStudentDTO dto)
         {
             
             var student = _studentRepository.GetByRA(dto.RA);
-            student.Email = dto.Email;
-            student.Name = dto.Name;
-            student.UpdatedDate = DateTime.Now;
-            _studentRepository.Put(student);
 
-           return Ok("Aluno alterado com sucesso");         
+            var email = _studentRepository.IsEmailAlreadyRegistered(dto.Email); 
 
+            if(email != null)
+            {
+                BadRequest("Email já está cadastrado");
+            }         
+            
+            student.ChangeNameOrEmail(dto.Name, dto.Email);
+            _studentRepository.Put(student);  
+
+            return Ok("Dados alterados com sucesso");
 
         }
 

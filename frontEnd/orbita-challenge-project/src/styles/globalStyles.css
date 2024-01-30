@@ -5,19 +5,12 @@
     --bg: #57bcff7e;
     --sucess: #2ecc71; 
     --danger: #e74c3c; 
-    --warning: #f39c12; 
+    --warning: #f39c12;
+    --grey : #cecccc
 }
 
 
-#app{
-    width: 100%;
-    height: 100%;  
-    margin: 0 auto;
-    padding: 0;
-    margin: 0;    
-    display: flex;
-    flex-direction: column;    
-}
+
 
 body{
     background-color: var(--bg);
@@ -27,9 +20,20 @@ body{
 
 }
 
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: var(--grey);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--brand-color3);
+}
+
+
+
 
  .btn {
-    padding: 1em;
+    padding: 0.5em;
     border: none;
     width: 100px;
     border-radius: 3px;

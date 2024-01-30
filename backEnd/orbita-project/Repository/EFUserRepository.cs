@@ -29,10 +29,10 @@ namespace Orbita.Repository
             var user = _context.User.FirstOrDefault(user => user.Email == email);
 
             bool isValidCredentials = _passwordHasher.VerifyPassword(user.Password, password);
-                if(isValidCredentials)
-                {
-                return user;
-                }
+            if(isValidCredentials)
+            {
+              return user;
+            }
 
             return null;
         }
@@ -54,8 +54,7 @@ namespace Orbita.Repository
             else
             {
                 return true;
-            }
-                        
+            }                        
         }
 
         /// <summary>
@@ -65,7 +64,7 @@ namespace Orbita.Repository
         /// <returns></returns>
         public User GetUserByEmail(string email)
         {
-            var user = _context.User.FirstOrDefault(user => user.Email == email && user.IsActived == true);
+            var user = _context.User.FirstOrDefault(user => user.Email == email);
 
             return user ?? throw new ArgumentException("Usuário não encontrado!");
         }
