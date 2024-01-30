@@ -1,0 +1,11 @@
+header{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button{
+    background-color: transparent;
+    color: var(--brand-color3);
+}
