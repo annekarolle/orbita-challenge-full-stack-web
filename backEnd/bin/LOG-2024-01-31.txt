@@ -1,0 +1,117 @@
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Warning : 0 - Aluno Iguinho registrado com sucesso
+Information : 0 - Aluno Iguinho deletado com sucesso
+Error : 0 - Error: Email  já esta cadastrado.
+Error : 0 - Error: Email  já esta cadastrado.
+Warning : 0 - Aluno adsfadsf registrado com sucesso
+Information : 0 - Aluno  deletado com sucesso
+Warning : 0 - Aluno Anne registrado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Warning : 0 - Aluno teste registrado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Information : 0 - Aluno Anne deletado com sucesso
+Information : 0 - Aluno Teslas Barborasa deletado com sucesso
+Information : 0 - Aluno Iguinho deletado com sucesso
+Warning : 0 - Aluno Amanda Cristina da Silva Peixonto registrado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Information : 0 - Aluno Anne Karolle deletado com sucesso
+Warning : 0 - Aluno pamonh registrado com sucesso
+Information : 0 - Aluno pamonha deletado com sucesso
+Information : 0 - Aluno pamonha deletado com sucesso
+Information : 0 - Aluno pamonha deletado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Warning : 0 - User Anne Karolle created with sucess!
+Warning : 0 - Aluno Anne karolle registrado com sucesso
+Warning : 0 - Aluno testes registrado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Information : 0 - testes deletado com sucesso!
+Error : 0 - Error: Email annekarolle@gmail.com já esta cadastrado.
+Warning : 0 - Aluno oLIVEIRA OLIVIAS VARAGAS registrado com sucesso
+Warning : 0 - Aluno AFAFAF registrado com sucesso
+Information : 0 - oLIVEIRA OLIVIAS VARAGAS deletado com sucesso!
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Warning : 0 - Aluno testes VALGAGAS registrado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Warning : 0 - Aluno barabara oliveria registrado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Warning : 0 - Aluno gagagaga registrado com sucesso
+Information : 0 - testes VALGAGAS deletado com sucesso!
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Error : 0 - Error: Email annekarolle@gmail.com já esta cadastrado.
+Warning : 0 - Aluno agagaga registrado com sucesso
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
+Warning : 0 - Aluno araffa registrado com sucesso
+Warning : 0 - Aluno anne registrado com sucesso
+Warning : 0 - Aluno anfkafnakfuna registrado com sucesso
+Information : 0 - AFAFAF deletado com sucesso!
+Information : 0 - gagagaga deletado com sucesso!
+Information : 0 - anne deletado com sucesso!
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project
