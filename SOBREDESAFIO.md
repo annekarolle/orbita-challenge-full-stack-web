@@ -217,6 +217,12 @@ dotnet run
 - Layout de maneira geral, poderia ser melhorado, implementar maior reponsividade, e colocaria o select funcional nas colunas da tabela da listagem de alunos.
 
 - No backend, acho que o principal e melhorar a configuração do projeto. 
+
+
+### Contatos
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/annekarolle/)
+[![Portfolio](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://annekarolle.github.io/portfolio/)
+[![email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](annekarolle@gmail.com)
   
 
 
