@@ -9,13 +9,13 @@ namespace Orbita.Entity
     /// Representa um usuário no sistema, contendo informações essenciais e métodos relacionados. Herda propriedade Id de Entitys
     /// </summary>
     public class User : Entitys
-    {       
+    {
 
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }    
+        public string Password { get; set; }
         public PermitionsTypes Permitions { get; set; }
-        public int Id { get; set; }
+
 
 
 
@@ -39,7 +39,7 @@ namespace Orbita.Entity
                 case PermitionsTypes.Admin:
                     Permitions = PermitionsTypes.Admin;
                     break;
-                case  PermitionsTypes.Director:
+                case PermitionsTypes.Director:
                     Permitions = PermitionsTypes.Director;
                     break;
                 default:
@@ -47,20 +47,14 @@ namespace Orbita.Entity
                     break;
             }
 
-
-            CreatedDate = DateTime.UtcNow;
         }
 
-        public void DesactiveUser(int id)
-        {
-        
-            DesactivedDate = DateTime.Now;
-        }
+
 
         public void ChangeUserPassword(string NewPassword, PasswordHasherService passwordHasher)
         {
             Password = passwordHasher.HashPassword(NewPassword);
-            UpdatedDate = DateTime.Now;
+
         }
     }
 }

@@ -24,6 +24,8 @@ public class UserController : ControllerBase
         _userRepository = userRepository;
         _logger = logger;
         _passwordHasher = passwordHasher;
+
+
     }
 
     
@@ -116,8 +118,7 @@ public class UserController : ControllerBase
         }
         else
         {                        
-            user.Email = newEmail;
-            user.UpdatedDate = DateTime.Now;
+            user.Email = newEmail;            
             _userRepository.Put(user);
 
             return Ok("Usuario alterado com sucesso");
@@ -162,8 +163,7 @@ public class UserController : ControllerBase
     /// <response code="401"> Não Autenticado</response>
     /// <response code="403"> Ñão Autorizado</response>
     /// <response code="404"> Usuário não encontrado</response>
-    [Authorize]
-    [Authorize(Roles = Permitions.Admin)]
+    [Authorize]   
     [HttpDelete("deleteUser/{id}")]
     public IActionResult DeleteUser(int id)
     {        
@@ -180,34 +180,7 @@ public class UserController : ControllerBase
             return Ok("Usuario deletado com sucesso");
         }       
     }
-
-    /// <summary>
-    /// Desativa usuário, o método necessita de autenticação.
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    /// <response code="200"> Retonar Sucesso</response>
-    /// <response code="401"> Não Autenticado</response>
-    /// <response code="404"> Usuário não encontrado</response>
-    [Authorize]    
-    [HttpDelete("desactiveUser")]
-    public IActionResult DesactiveUser()
-    {
-        var userEmail = HttpContext.User.FindFirst(ClaimTypes.Email)?.Value;
-
-        var user = _userRepository.GetUserByEmail(userEmail);
-
-        if (user == null)
-        {
-            return NotFound("Usuário não encontrado ou desativado!");
-        }
-        else
-        {
-            user.DesactiveUser(user.Id);
-            return Ok("Usuario deletado com sucesso");
-        }
-
-    }
+     
 
 
 

@@ -11,16 +11,15 @@ namespace orbita.Configurations
         {
             builder.ToTable("Student");
             builder.HasKey(u => u.RA);
-            builder.Property(u => u.RA).HasColumnType("VARCHAR(100)");
             builder.Property(u => u.Id).HasColumnType("INT");
+            builder.Property(u => u.RA).HasColumnType("VARCHAR(100)");          
             builder.Property(u => u.Name).HasColumnType("VARCHAR(100)").IsRequired();
             builder.Property(u => u.Email).HasColumnType("VARCHAR(100)").IsRequired();
             builder.Property(u => u.CPF).HasColumnType("VARCHAR(100)").IsRequired();
+          
 
 
-            builder.Property(u => u.CreatedDate).HasColumnType("timestamp with time zone").IsRequired();
-            builder.Property(u => u.DesactivedDate).HasColumnType("timestamp with time zone").IsRequired(false);
-            builder.Property(u => u.UpdatedDate).HasColumnType("timestamp with time zone").IsRequired(false);
+
 
         }
     }

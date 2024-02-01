@@ -11,7 +11,7 @@
             <param name="SaveStudentsDTO"></param>
             <returns></returns>  
         </member>
-        <member name="M:orbita.Controllers.StudentController.GetAllUser">
+        <member name="M:orbita.Controllers.StudentController.GetAllStudents">
             <summary>
             Obtém todos os alunos, o método necessita de autenticação e permissão de Administrador
             </summary>
@@ -31,7 +31,7 @@
             <response code="403"> Ñão Autorizado</response>
             <response code="404"> Aluno não encontrado</response>
         </member>
-        <member name="M:orbita.Controllers.StudentController.DeleteStudent(System.String)">
+        <member name="M:orbita.Controllers.StudentController.DeleteStudentRa(System.String)">
             <summary>
             Deleta um aluno, o método necessita de permissão de Administrador.
             </summary>
@@ -151,30 +151,6 @@
         <member name="M:Orbita.Migrations.createtables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
-        <member name="T:Orbita.Migrations.changetimestamp">
-            <inheritdoc />
-        </member>
-        <member name="M:Orbita.Migrations.changetimestamp.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Orbita.Migrations.changetimestamp.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Orbita.Migrations.changetimestamp.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:Orbita.Migrations.changetables">
-            <inheritdoc />
-        </member>
-        <member name="M:Orbita.Migrations.changetables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Orbita.Migrations.changetables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Orbita.Migrations.changetables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
         <member name="M:Orbita.Repository.EFStudentRepository.IsEmailAlreadyRegistered(System.String)">
             <summary>
             Faz a verificação se o email já esta registrado
@@ -258,16 +234,6 @@
             <response code="200"> Retonar Sucesso</response>
             <response code="401"> Não Autenticado</response>
             <response code="403"> Ñão Autorizado</response>
-            <response code="404"> Usuário não encontrado</response>
-        </member>
-        <member name="M:UserController.DesactiveUser">
-            <summary>
-            Desativa usuário, o método necessita de autenticação.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-            <response code="200"> Retonar Sucesso</response>
-            <response code="401"> Não Autenticado</response>
             <response code="404"> Usuário não encontrado</response>
         </member>
     </members>

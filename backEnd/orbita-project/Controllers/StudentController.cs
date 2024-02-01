@@ -6,7 +6,7 @@ using Orbita.Entity;
 using Orbita.Enums;
 using Orbita.Interface;
 using System.Security.Claims;
- 
+using System.Text.RegularExpressions;
 
 namespace orbita.Controllers
 {
@@ -38,7 +38,28 @@ namespace orbita.Controllers
         [Authorize(Roles = Permitions.Admin)]
         [HttpPost("saveStudent")]
         public IActionResult SaveStudent(SaveStudentsDTO saveDto)
-        {            
+        {
+
+            string emailRegex = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+
+            if (string.IsNullOrEmpty(saveDto.Email))
+            {
+                return BadRequest("Informar um email válido!");
+            }
+            if (string.IsNullOrEmpty(saveDto.Name))
+            {
+                return BadRequest("Informar um nome válido!");
+            }
+            if (!Regex.IsMatch(saveDto.Email, emailRegex))
+            {
+                return BadRequest("E-mail inválido!");
+            }
+
+            if (saveDto.CPF.Length <= 10)
+            {
+                return BadRequest("CPF deve conter 11 digitos sem caracteres especiais");
+            }
+
             if (_studentRepository.IsEmailAlreadyRegistered(saveDto.Email))
             {
                 var errorMessage = $"Error: Email {saveDto.Email} já esta cadastrado.";
@@ -46,7 +67,14 @@ namespace orbita.Controllers
                 return BadRequest(errorMessage);
             }
 
-           _studentRepository.Save(new Student(saveDto));
+            var student = new Student(saveDto);
+
+            var students = _studentRepository.GetAll();
+
+            student.Id = students.Count + 1;
+
+
+           _studentRepository.Save(student);
 
             var message = $"Aluno {saveDto.Name} registrado com sucesso";
             _logger.LogWarning(message);
@@ -62,7 +90,7 @@ namespace orbita.Controllers
         /// <response code="403"> Ñão Autorizado</response>
         [Authorize]       
         [HttpGet("getAllStudent")]
-        public IActionResult GetAllUser()
+        public IActionResult GetAllStudents()
         {
             return Ok(_studentRepository.GetAll());
         }
@@ -108,14 +136,13 @@ namespace orbita.Controllers
         [Authorize]
         [Authorize(Roles = Permitions.Admin)]
         [HttpDelete("deleteStudent/{ra}")]
-        public IActionResult DeleteStudent(string ra)
+        public IActionResult DeleteStudentRa(string ra)
         {
-            var student = _studentRepository.GetByRA(ra);
-            _studentRepository.Delete(student.Id);
+            var mensagem = _studentRepository.DeleteStudent(ra);           
 
-            _logger.LogInformation($"Aluno {student.Name} deletado com sucesso");
+            _logger.LogInformation(mensagem);
 
-            return Ok("Aluno deletado com sucesso");
+            return Ok(mensagem);
              
         }
 
@@ -130,7 +157,14 @@ namespace orbita.Controllers
         [HttpPut("editStudent")]
         public IActionResult EditStudent(PutStudentDTO dto)
         {
-            
+            if(dto.Email.Length <= 0 )
+            {
+                 return BadRequest("Informar um email válido!");
+            }
+            if (dto.Name.Length <= 0)
+            {
+                return BadRequest("Informar um nome válido!");
+            }
             var student = _studentRepository.GetByRA(dto.RA);
 
             var email = _studentRepository.IsEmailAlreadyRegistered(dto.Email); 

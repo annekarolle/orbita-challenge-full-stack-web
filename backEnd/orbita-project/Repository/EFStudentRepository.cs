@@ -1,4 +1,5 @@
-﻿using orbita.Interface;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using orbita.Interface;
 using Orbita.Entity;
 using Orbita.Interface;
  
@@ -33,9 +34,24 @@ namespace Orbita.Repository
 
         public Student GetByRA(string ra)
         {
-            var user = _context.Student.FirstOrDefault(user => user.RA == ra);
+            var student = _context.Student.FirstOrDefault(student => student.RA == ra);
 
-            return user ?? throw new ArgumentException("Aluno não encontrado!");
+            return student ?? throw new ArgumentException("Aluno não encontrado!");
+        }
+
+
+        public string DeleteStudent(string ra)
+        {
+            var student = _context.Student.FirstOrDefault(student => student.RA == ra);
+
+            if (student == null)
+            {
+                 throw new ArgumentException("Aluno não encontrado!");
+            }
+            _dbSet.Remove(student);
+            _context.SaveChanges();
+
+            return $"{student.Name} deletado com sucesso!";
         }
     }
 }

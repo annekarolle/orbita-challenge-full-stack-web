@@ -19,18 +19,20 @@ namespace Orbita.Entity
             Email = dto.Email;
             RA = GenerateRA(dto.RA, dto.Name);
             CPF = dto.CPF;
+            
         }
 
         public string GenerateRA(string ra, string name)
         {
             if (!string.IsNullOrEmpty(name))
-            {
+            {                 
                 string[] nameParts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-             
-                string lastSurname = nameParts.LastOrDefault();
-
-                return $"{ra}{lastSurname}" ?? string.Empty;
+                string lastSurname = nameParts.LastOrDefault();                              
+                int hashCode = Math.Abs(lastSurname.GetHashCode() % 1000);
+                string result = ra + hashCode.ToString();              
+                return result;
             }
+
             return string.Empty;
         }
 

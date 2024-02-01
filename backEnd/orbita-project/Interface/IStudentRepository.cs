@@ -20,5 +20,7 @@ namespace orbita.Interface
         /// <param name="ra"></param>
         /// <returns></returns>
         Student GetByRA(string ra);
+
+        string DeleteStudent(string ra);
     }
 }
