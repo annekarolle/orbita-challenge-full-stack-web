@@ -110,3 +110,8 @@ Warning : 0 - Aluno anfkafnakfuna registrado com sucesso
 Information : 0 - AFAFAF deletado com sucesso!
 Information : 0 - gagagaga deletado com sucesso!
 Information : 0 - anne deletado com sucesso!
+Information : ListeningOnAddress - Now listening on: https://localhost:7287
+Information : ListeningOnAddress - Now listening on: http://localhost:5158
+Information : 0 - Application started. Press Ctrl+C to shut down.
+Information : 0 - Hosting environment: Development
+Information : 0 - Content root path: C:\Users\annek\OneDrive\Documentos\ESTUDO\a+\orbita-challenge-full-stack-web\backEnd\orbita-project

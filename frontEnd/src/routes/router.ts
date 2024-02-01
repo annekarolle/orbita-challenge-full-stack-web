@@ -20,11 +20,7 @@ const routes = [
       {
         path: 'cadastrar',  
         component: StudentsCrudVue,  
-      },
-      {
-        path: 'welcome',
-        component: Welcome,
-      },
+      },   
       {
         path: 'editar/:ra',  
         component: EditStudentComponentsVue,  

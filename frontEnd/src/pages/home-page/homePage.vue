@@ -24,7 +24,7 @@ export default {
       Login(data).then((response) => {
         console.log(response)
         toast.success('Login Efetuado com Sucesso')
-        this.$router.push('/dashboard/welcome');
+        this.$router.push('/dashboard/listar');
       }).catch((error) => {
         toast.error('Oops! Usuário ou senha incorretos!')
         console.error('Erro durante o login:', error);
@@ -59,7 +59,7 @@ export default {
       <v-text-field
       label="Password"
       type="password"
-      id="password"
+      id="pass  word"
       v-model="password" 
       required
       :rules="rules"
